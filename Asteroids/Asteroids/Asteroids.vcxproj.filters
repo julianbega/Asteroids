@@ -7,10 +7,66 @@
     <Filter Include="src">
       <UniqueIdentifier>{13aabd1c-18ff-41d6-8023-cd49e190b81e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Asteroids">
+      <UniqueIdentifier>{c8b8754e-19d8-44ff-aadc-e26e3fc9a592}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Objects">
+      <UniqueIdentifier>{7804c362-b93c-482f-b4e1-9e1665b6fa4b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Game.cpp">
+      <Filter>src\Asteroids</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GamePlay.cpp">
+      <Filter>src\Asteroids</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Credits.cpp">
+      <Filter>src\Asteroids</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Menu.cpp">
+      <Filter>src\Asteroids</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Global.cpp">
+      <Filter>src\Asteroids</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Bullet.cpp">
+      <Filter>src\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Rock.cpp">
+      <Filter>src\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Player.cpp">
+      <Filter>src\Objects</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\Game.h">
+      <Filter>src\Asteroids</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GamePlay.h">
+      <Filter>src\Asteroids</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Credits.h">
+      <Filter>src\Asteroids</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Menu.h">
+      <Filter>src\Asteroids</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Global.h">
+      <Filter>src\Asteroids</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Player.h">
+      <Filter>src\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Rock.h">
+      <Filter>src\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet.h">
+      <Filter>src\Objects</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

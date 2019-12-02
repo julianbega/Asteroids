@@ -5,7 +5,7 @@
 #include "Credits.h"
 #include "Global.h"
 
-namespace FormersMJ
+namespace AsteroidsJ
 {
 	Game::Game()
 	{

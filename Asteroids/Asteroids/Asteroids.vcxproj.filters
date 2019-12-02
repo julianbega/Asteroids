@@ -15,57 +15,57 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\main.cpp">
+    <ClCompile Include="..\src\Credits.cpp">
+      <Filter>src\Asteroids</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Game.cpp">
+      <Filter>src\Asteroids</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GamePlay.cpp">
+      <Filter>src\Asteroids</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Global.cpp">
+      <Filter>src\Asteroids</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Menu.cpp">
+      <Filter>src\Asteroids</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Bullet.cpp">
+      <Filter>src\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Player.cpp">
+      <Filter>src\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Rock.cpp">
+      <Filter>src\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main.cpp">
       <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Game.cpp">
-      <Filter>src\Asteroids</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\GamePlay.cpp">
-      <Filter>src\Asteroids</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Credits.cpp">
-      <Filter>src\Asteroids</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Menu.cpp">
-      <Filter>src\Asteroids</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Global.cpp">
-      <Filter>src\Asteroids</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Bullet.cpp">
-      <Filter>src\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Rock.cpp">
-      <Filter>src\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Player.cpp">
-      <Filter>src\Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\Game.h">
+    <ClInclude Include="..\src\Credits.h">
       <Filter>src\Asteroids</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\GamePlay.h">
+    <ClInclude Include="..\src\Game.h">
       <Filter>src\Asteroids</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\Credits.h">
+    <ClInclude Include="..\src\GamePlay.h">
       <Filter>src\Asteroids</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\Menu.h">
+    <ClInclude Include="..\src\Global.h">
       <Filter>src\Asteroids</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\Global.h">
+    <ClInclude Include="..\src\Menu.h">
       <Filter>src\Asteroids</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\Player.h">
+    <ClInclude Include="..\src\Bullet.h">
       <Filter>src\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\Rock.h">
+    <ClInclude Include="..\src\Player.h">
       <Filter>src\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\Bullet.h">
+    <ClInclude Include="..\src\Rock.h">
       <Filter>src\Objects</Filter>
     </ClInclude>
   </ItemGroup>

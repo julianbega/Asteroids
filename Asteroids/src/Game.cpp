@@ -9,28 +9,20 @@ namespace AsteroidsJ
 {
 	Game::Game()
 	{
-		InitWindow(screenWidth, screenHeight, "Formers v0.3");
+		InitWindow(screenWidth, screenHeight, "Asteroids v0.1");
 		InitAudioDevice();
-		game = new Game();
+		gamePlay = new GamePlay();
 		menu = new Menu();
 		credits = new Credits();
 		inGame = true;
-		Global::mySoundDoor = LoadSound("assets/sound/doorOpen.wav");
-		Global::WallSkin = LoadTexture("assets/img/Wall.png");
-		Global::WallSkin.height = static_cast<int>(tileScale);
-		Global::WallSkin.width = static_cast<int>(tileScale);
-		winSong = LoadSound("assets/sound/WinSong.wav");
-		Global::doorCircleTexture = LoadTexture("assets/img/Door-C.png");
-		Global::doorRectangleTexture = LoadTexture("assets/img/Door-R.png");
-		Global::doorTriangleTexture = LoadTexture("assets/img/Door-T.png");
+
 	}
 
 	Game::~Game()
 	{
-		if (game) delete game;
+		if (gamePlay) delete gamePlay;
 		if (menu) delete menu;
 		if (credits) delete credits;
-		UnloadSound(Global::mySoundDoor);
 		CloseAudioDevice();
 		CloseWindow();
 	}
@@ -47,7 +39,7 @@ namespace AsteroidsJ
 	void Game::Init()
 	{
 		menu->Init();
-		game->Init();
+		gamePlay->Init();
 		credits->Init();
 		gamestatus = MENU;
 	}
@@ -62,9 +54,9 @@ namespace AsteroidsJ
 			if (!firstTime)
 			{
 				firstTime = true;
-				game->Init();
+				gamePlay->Init();
 			}
-			if (game->Update())
+			if (gamePlay->Update())
 			{
 				gamestatus = CREDITS;
 				menu->changeIsControlMenu();
@@ -90,7 +82,7 @@ namespace AsteroidsJ
 			menu->Draw();
 			break;
 		case GAME:
-			game->Draw();
+			gamePlay->Draw();
 			break;
 		case CREDITS:
 			credits->Draw();

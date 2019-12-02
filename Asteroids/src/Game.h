@@ -17,7 +17,7 @@ namespace AsteroidsJ
 		const int screenWidth = 810;
 		const int screenHeight = 450;
 
-		GamePlay* game;
+		GamePlay* gamePlay;
 		Menu* menu;
 		Credits* credits;
 		bool firstTime;

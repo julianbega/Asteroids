@@ -1,4 +1,4 @@
-#include "Asteroids/Game.h"
+#include "Game.h"
 using namespace AsteroidsJ;
 int main()
 {

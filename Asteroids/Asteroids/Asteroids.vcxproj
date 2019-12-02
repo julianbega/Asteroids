@@ -83,7 +83,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\src;$(SolutionDir)\res;$(SolutionDir)..\raylib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)res;$(SolutionDir)raylib\include;$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
@@ -92,7 +92,8 @@
       <SubSystem>Console</SubSystem>
     </Link>
     <PostBuildEvent>
-      <Command>"$(SolutionDir)postComp.bat" "$(SolutionDir)" "$(OutDir)"</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -111,7 +112,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\src;$(SolutionDir)\res;$(SolutionDir)..\raylib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)res;$(SolutionDir)raylib\include;$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
@@ -123,7 +124,8 @@
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
     <PostBuildEvent>
-      <Command>"$(SolutionDir)postComp.bat" "$(SolutionDir)" "$(OutDir)"</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -141,25 +143,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\Bullet.cpp" />
-    <ClCompile Include="..\..\src\Credits.cpp" />
-    <ClCompile Include="..\..\src\Game.cpp" />
-    <ClCompile Include="..\..\src\GamePlay.cpp" />
-    <ClCompile Include="..\..\src\Global.cpp" />
-    <ClCompile Include="..\..\src\main.cpp" />
-    <ClCompile Include="..\..\src\Menu.cpp" />
-    <ClCompile Include="..\..\src\Player.cpp" />
-    <ClCompile Include="..\..\src\Rock.cpp" />
+    <ClCompile Include="..\src\Bullet.cpp" />
+    <ClCompile Include="..\src\Credits.cpp" />
+    <ClCompile Include="..\src\Game.cpp" />
+    <ClCompile Include="..\src\GamePlay.cpp" />
+    <ClCompile Include="..\src\Global.cpp" />
+    <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\Menu.cpp" />
+    <ClCompile Include="..\src\Player.cpp" />
+    <ClCompile Include="..\src\Rock.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\Bullet.h" />
-    <ClInclude Include="..\..\src\Credits.h" />
-    <ClInclude Include="..\..\src\Game.h" />
-    <ClInclude Include="..\..\src\GamePlay.h" />
-    <ClInclude Include="..\..\src\Global.h" />
-    <ClInclude Include="..\..\src\Menu.h" />
-    <ClInclude Include="..\..\src\Player.h" />
-    <ClInclude Include="..\..\src\Rock.h" />
+    <ClInclude Include="..\src\Bullet.h" />
+    <ClInclude Include="..\src\Credits.h" />
+    <ClInclude Include="..\src\Game.h" />
+    <ClInclude Include="..\src\GamePlay.h" />
+    <ClInclude Include="..\src\Global.h" />
+    <ClInclude Include="..\src\Menu.h" />
+    <ClInclude Include="..\src\Player.h" />
+    <ClInclude Include="..\src\Rock.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

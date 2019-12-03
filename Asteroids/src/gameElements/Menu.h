@@ -12,7 +12,7 @@ namespace AsteroidsJ
 	{
 		enum MenuOptions
 		{
-			Play, Controls, Credits, Exit
+			Play, Credits, Exit
 		};
 	public:
 		Menu();
@@ -22,11 +22,8 @@ namespace AsteroidsJ
 		void Update();
 		void Draw();
 		int actualOption;
-		bool getIsControlMenu();
-		void changeIsControlMenu();
 		float volume;
 	private:
-		bool isControlMenu;
 		Sound menuSelectorSound;
 		Music menuMusic;
 		Texture2D titleTexture;

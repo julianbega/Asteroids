@@ -1,6 +1,8 @@
 #include "Global.h"
 namespace AsteroidsJ
 {
-	GameStage gamestatus = MENU;
+	
+	GameStage gamestatus = MENU;		
+
 
 }

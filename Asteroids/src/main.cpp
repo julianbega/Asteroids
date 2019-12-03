@@ -1,9 +1,9 @@
-#include "Game.h"
+#include "game/Asteroids.h"
 using namespace AsteroidsJ;
 int main()
 {
-	Game* game = new Game();
+	Asteroids* game = new Asteroids();
 	game->Play();
-	if (game) delete game;
+	if(game) delete game;
 	return 0;
 }

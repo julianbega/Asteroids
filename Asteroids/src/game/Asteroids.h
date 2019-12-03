@@ -1,23 +1,21 @@
-#ifndef GAMES_H
-#define GAMES_H
+#ifndef ASTEROIDS_H
+#define ASTEROIDS_H
 #include "raylib.h"
 
-#include "GamePlay.h"
-#include "Menu.h"
-#include "Credits.h"
-#include "Global.h"
+#include "gameElements/Game.h"
+#include "gameElements/Menu.h"
+#include "gameElements/Credits.h"
+#include "gameElements/Global.h"
 namespace AsteroidsJ
 {
-	class Game
+	class Asteroids
 	{
 	public:
-		Game();
-		~Game();
+		Asteroids();
+		~Asteroids();
 		void Play();
-		const int screenWidth = 810;
-		const int screenHeight = 450;
 
-		GamePlay* gamePlay;
+		Game* game;
 		Menu* menu;
 		Credits* credits;
 		bool firstTime;

@@ -18,6 +18,33 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\gameElements\Credits.cpp" />
+    <ClCompile Include="..\src\gameElements\Game.cpp" />
+    <ClCompile Include="..\src\gameElements\Global.cpp" />
+    <ClCompile Include="..\src\gameElements\Menu.cpp" />
+    <ClCompile Include="..\src\gameObjects\Bullet.cpp" />
+    <ClCompile Include="..\src\gameObjects\MediumMeteor.cpp" />
+    <ClCompile Include="..\src\gameObjects\Meteor.cpp" />
+    <ClCompile Include="..\src\gameObjects\Player.cpp" />
+    <ClCompile Include="..\src\gameObjects\Shoot.cpp" />
+    <ClCompile Include="..\src\gameObjects\SmallMeteor.cpp" />
+    <ClCompile Include="..\src\game\Asteroids.cpp" />
+    <ClCompile Include="..\src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\gameElements\Credits.h" />
+    <ClInclude Include="..\src\gameElements\Game.h" />
+    <ClInclude Include="..\src\gameElements\Global.h" />
+    <ClInclude Include="..\src\gameElements\Menu.h" />
+    <ClInclude Include="..\src\gameObjects\Bullet.h" />
+    <ClInclude Include="..\src\gameObjects\MediumMeteor.h" />
+    <ClInclude Include="..\src\gameObjects\Meteor.h" />
+    <ClInclude Include="..\src\gameObjects\Player.h" />
+    <ClInclude Include="..\src\gameObjects\Shoot.h" />
+    <ClInclude Include="..\src\gameObjects\SmallMeteor.h" />
+    <ClInclude Include="..\src\game\Asteroids.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{44C3D58F-3C0E-4CDF-95E9-05B5E5AD7605}</ProjectGuid>
@@ -84,7 +111,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)res;$(SolutionDir)raylib\include;$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)raylib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -113,7 +140,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)res;$(SolutionDir)raylib\include;$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -142,27 +169,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\src\Bullet.cpp" />
-    <ClCompile Include="..\src\Credits.cpp" />
-    <ClCompile Include="..\src\Game.cpp" />
-    <ClCompile Include="..\src\GamePlay.cpp" />
-    <ClCompile Include="..\src\Global.cpp" />
-    <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="..\src\Menu.cpp" />
-    <ClCompile Include="..\src\Player.cpp" />
-    <ClCompile Include="..\src\Rock.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\src\Bullet.h" />
-    <ClInclude Include="..\src\Credits.h" />
-    <ClInclude Include="..\src\Game.h" />
-    <ClInclude Include="..\src\GamePlay.h" />
-    <ClInclude Include="..\src\Global.h" />
-    <ClInclude Include="..\src\Menu.h" />
-    <ClInclude Include="..\src\Player.h" />
-    <ClInclude Include="..\src\Rock.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -1,32 +1,33 @@
-#include "Game.h"
+#include "Asteroids.h"
 #include "raylib.h"
-#include "GamePlay.h"
-#include "Menu.h"
-#include "Credits.h"
-#include "Global.h"
+#include "gameElements/Game.h"
+#include "gameElements/Menu.h"
+#include "gameElements/Credits.h"
+#include "gameElements/Global.h"
 
 namespace AsteroidsJ
 {
-	Game::Game()
+	Asteroids::Asteroids()
 	{
-		InitWindow(screenWidth, screenHeight, "Asteroids v0.1");
+		InitWindow(screenWidth, screenHeight, "Asteroids");
 		InitAudioDevice();
-		gamePlay = new GamePlay();
+		game = new Game();
 		menu = new Menu();
 		credits = new Credits();
 		inGame = true;
 
+
 	}
 
-	Game::~Game()
+	Asteroids::~Asteroids()
 	{
-		if (gamePlay) delete gamePlay;
+		if (game) delete game;
 		if (menu) delete menu;
 		if (credits) delete credits;
 		CloseAudioDevice();
 		CloseWindow();
 	}
-	void Game::Play()
+	void Asteroids::Play()
 	{
 		Init();
 		while (inGame)
@@ -36,14 +37,15 @@ namespace AsteroidsJ
 			Draw();
 		}
 	}
-	void Game::Init()
+	void Asteroids::Init()
 	{
 		menu->Init();
-		gamePlay->Init();
+		game->Init();
 		credits->Init();
 		gamestatus = MENU;
+		SetTargetFPS(60);
 	}
-	void Game::Update()
+	void Asteroids::Update()
 	{
 		switch (gamestatus)
 		{
@@ -54,14 +56,14 @@ namespace AsteroidsJ
 			if (!firstTime)
 			{
 				firstTime = true;
-				gamePlay->Init();
+				game->Init();
 			}
-			if (gamePlay->Update())
+			if (game->Update())
 			{
-				gamestatus = CREDITS;
-				menu->changeIsControlMenu();
+				/*gamestatus = CREDITS;
 				firstTime = false;
 				PlaySound(winSong);
+				*/
 			}
 			break;
 		case CREDITS:
@@ -72,7 +74,7 @@ namespace AsteroidsJ
 			break;
 		}
 	}
-	void Game::Draw()
+	void Asteroids::Draw()
 	{
 		BeginDrawing();
 		ClearBackground(BLACK);
@@ -82,7 +84,7 @@ namespace AsteroidsJ
 			menu->Draw();
 			break;
 		case GAME:
-			gamePlay->Draw();
+			game->Draw();
 			break;
 		case CREDITS:
 			credits->Draw();

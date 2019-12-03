@@ -5,7 +5,7 @@ namespace AsteroidsJ
 {
 	Credits::Credits()
 	{
-		creditsTexture = LoadTexture("assets/img/Creditos.png");
+		creditsTexture = LoadTexture("res/assets/img/Creditos.png");
 		creditsTexture.width = GetScreenWidth();
 		creditsTexture.height = GetScreenHeight();
 	}

@@ -1,24 +1,26 @@
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef BULLET_H
+#define BULLET_H
 #include "raylib.h"
+#include "gameElements/Global.h"
 namespace AsteroidsJ
 {
-	class Player
+	class Bullet
 	{
 	public:
-
-		Player();
-		~Player();
+		Bullet();
+		~Bullet();
 		void Init();
 		void Update();
 		void Draw();
-	private:
 		Vector2 position;
 		Vector2 speed;
-		float acceleration;
+		float radius;
 		float rotation;
-		Vector3 collider;
+		int lifeSpawn;
+		bool active;
 		Color color;
+	private:
+		
 	};
 }
 #endif

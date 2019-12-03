@@ -25,8 +25,10 @@ namespace AsteroidsJ
 
 	void Menu::Init()
 	{
+		player = new Player();
 		actualOption = Play;
 		PlayMusicStream(menuMusic);
+		player->shipHeight = (10.0f) / tanf(20 * DEG2RAD);
 	}
 
 	void Menu::Input()
@@ -57,7 +59,7 @@ namespace AsteroidsJ
 				actualOption++;
 			}
 		}
-		if (IsKeyDown(KEY_ESCAPE))
+		if (IsKeyReleased(KEY_ESCAPE))
 		{
 			gamestatus = END;
 		}
@@ -71,9 +73,9 @@ namespace AsteroidsJ
 					StopSound(menuSelectorSound);
 					StopMusicStream(menuMusic);
 				
-
+					break;
 				case Credits:
-					//gamestatus = CREDITS;
+					gamestatus = CREDITS;
 					break;
 
 				case Exit:
@@ -107,12 +109,16 @@ namespace AsteroidsJ
 		UpdateMusicStream(menuMusic);
 		SetMusicVolume(menuMusic, volume);
 		Input();
-
+		player->Input();
+		player->Update();
 	}
 
 	void Menu::Draw()
 	{
-		
+		if (player != NULL)
+		{
+			player->Draw();
+		}
 			int tilescale = 30;
 			DrawTexture(titleTexture, GetScreenWidth() / 2 - titleTexture.width / 2,
 				GetScreenHeight() / 5 - titleTexture.height / 2, WHITE);

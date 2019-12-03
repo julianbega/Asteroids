@@ -33,6 +33,7 @@ namespace AsteroidsJ
 	}
 	void Credits::Draw()
 	{
+		ClearBackground(BLACK);
 		DrawTexture(creditsTexture, 0, 0, WHITE);
 	}
 }

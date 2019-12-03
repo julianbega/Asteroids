@@ -128,7 +128,7 @@ namespace AsteroidsJ
 			player->Input();
 			player->Update();
 
-			if (IsKeyDown(KEY_ESCAPE))
+			if (IsKeyReleased(KEY_ESCAPE))
 			{
 				Init();
 				gameOver = false;
@@ -354,20 +354,20 @@ namespace AsteroidsJ
 		}
 		for (int i = 0; i < MAX_BIG_METEORS; i++)
 		{
-			if (bigMeteor[i].active) DrawCircleV(bigMeteor[i].position, bigMeteor[i].radius, DARKGRAY);
-			else DrawCircleV(bigMeteor[i].position, bigMeteor[i].radius, Fade(LIGHTGRAY, 0.3f));
+			if (bigMeteor[i].active) DrawCircleV(bigMeteor[i].position, bigMeteor[i].radius, DARKBLUE);
+			else DrawCircleV(bigMeteor[i].position, bigMeteor[i].radius, Fade(BLUE, 0.3f));
 		}
 
 		for (int i = 0; i < MAX_MEDIUM_METEORS; i++)
 		{
-			if (mediumMeteor[i].active) DrawCircleV(mediumMeteor[i].position, mediumMeteor[i].radius, GRAY);
-			else DrawCircleV(mediumMeteor[i].position, mediumMeteor[i].radius, Fade(LIGHTGRAY, 0.3f));
+			if (mediumMeteor[i].active) DrawCircleV(mediumMeteor[i].position, mediumMeteor[i].radius, DARKGREEN);
+			else DrawCircleV(mediumMeteor[i].position, mediumMeteor[i].radius, Fade(GREEN, 0.3f));
 		}
 
 		for (int i = 0; i < MAX_SMALL_METEORS; i++)
 		{
-			if (smallMeteor[i].active) DrawCircleV(smallMeteor[i].position, smallMeteor[i].radius, GRAY);
-			else DrawCircleV(smallMeteor[i].position, smallMeteor[i].radius, Fade(LIGHTGRAY, 0.3f));
+			if (smallMeteor[i].active) DrawCircleV(smallMeteor[i].position, smallMeteor[i].radius, DARKPURPLE);
+			else DrawCircleV(smallMeteor[i].position, smallMeteor[i].radius, Fade(PURPLE, 0.3f));
 		}
 
 		// Draw shoot
@@ -381,7 +381,7 @@ namespace AsteroidsJ
 			DrawText("PRESS [ENTER] TO PLAY AGAIN", GetScreenWidth() / 2 - MeasureText("PRESS [ENTER] TO PLAY AGAIN", 20) / 2, GetScreenHeight() / 2 - 50, 20, GRAY);
 		}
 
-		if (pause) DrawText("GAME PAUSED", screenWidth / 2 - MeasureText("GAME PAUSED", 40) / 2, screenHeight / 2 - 40, 40, GRAY);
+		if (pause) DrawText("PAUSED", screenWidth / 2 - MeasureText("PAUSED", 40) / 2, screenHeight / 2 - 40, 40, BLACK);
 	
 		//else DrawText("PRESS [ENTER] TO PLAY AGAIN", GetScreenWidth() / 2 - MeasureText("PRESS [ENTER] TO PLAY AGAIN", 20) / 2, GetScreenHeight() / 2 - 50, 20, GRAY);
 

@@ -15,12 +15,13 @@ namespace AsteroidsJ
 		menu = new Menu();
 		credits = new Credits();
 		inGame = true;
-
+		SetExitKey(KEY_BACK);
 
 	}
 
 	Asteroids::~Asteroids()
 	{
+
 		if (game) delete game;
 		if (menu) delete menu;
 		if (credits) delete credits;
@@ -30,7 +31,7 @@ namespace AsteroidsJ
 	void Asteroids::Play()
 	{
 		Init();
-		while (inGame)
+		while (inGame && !WindowShouldClose())
 		{
 
 			Update();
@@ -40,7 +41,6 @@ namespace AsteroidsJ
 	void Asteroids::Init()
 	{
 		menu->Init();
-		//ººgame->Init();
 		credits->Init();
 		gamestatus = MENU;
 		SetTargetFPS(60);
@@ -55,6 +55,7 @@ namespace AsteroidsJ
 		case GAME:
 			if (!firstTime)
 			{
+				menu->Init();
 				firstTime = true;
 				game->Init();
 			}
@@ -67,7 +68,7 @@ namespace AsteroidsJ
 			}
 			break;
 		case CREDITS:
-		//	credits->Update();
+			credits->Update();
 			break;
 		case EXIT:
 			inGame = false;

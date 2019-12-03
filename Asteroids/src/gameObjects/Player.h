@@ -2,7 +2,7 @@
 #define PLAYER_H
 #include "raylib.h"
 #include "gameElements/Global.h"
-#include "Shoot.h"
+//#include "Shoot.h"
 namespace AsteroidsJ
 {
 
@@ -20,7 +20,6 @@ namespace AsteroidsJ
 		const float PlayerBaseSize = 20.0f;
 		const float PlayerSpeed = 6.0f;
 		const int PlayerMaxShoots = 10;
-		Shoot *shoot[PLAYER_MAX_SHOOTS];
 		Vector2 position;
 		Vector2 speed;
 		float acceleration;

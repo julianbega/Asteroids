@@ -7,6 +7,33 @@ namespace AsteroidsJ
 {
 	Meteor::Meteor()
 	{
+		
+	}
+
+	Meteor::~Meteor()
+	{
+
+	}
+
+	void Meteor::Init()
+	{
+		position = { 0.0f,0.0f };
+		speed = { 0.0f,0.0f };
+		radius = 40;
+		active = true;
+		color = BLUE;
+		correctRange = false;
+		posx, posy;
+		velx, vely;
+
+		
+	}
+
+
+
+
+	void Meteor::Update()
+	{
 		correctRange = false;
 		posx = GetRandomValue(0, screenWidth);
 
@@ -41,28 +68,8 @@ namespace AsteroidsJ
 			}
 			else correctRange = true;
 		}
-
 		speed = { static_cast<float>(velx), static_cast<float>(vely) };
-		radius = 40;
-		active = true;
-		color = BLUE;
-	}
 
-	Meteor::~Meteor()
-	{
-
-	}
-
-	void Meteor::Init()
-	{
-		
-	}
-
-
-
-
-	void Meteor::Update()
-	{
 	}
 
 	void Meteor::Draw()

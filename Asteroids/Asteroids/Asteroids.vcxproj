@@ -23,12 +23,7 @@
     <ClCompile Include="..\src\gameElements\Game.cpp" />
     <ClCompile Include="..\src\gameElements\Global.cpp" />
     <ClCompile Include="..\src\gameElements\Menu.cpp" />
-    <ClCompile Include="..\src\gameObjects\Bullet.cpp" />
-    <ClCompile Include="..\src\gameObjects\MediumMeteor.cpp" />
-    <ClCompile Include="..\src\gameObjects\Meteor.cpp" />
     <ClCompile Include="..\src\gameObjects\Player.cpp" />
-    <ClCompile Include="..\src\gameObjects\Shoot.cpp" />
-    <ClCompile Include="..\src\gameObjects\SmallMeteor.cpp" />
     <ClCompile Include="..\src\game\Asteroids.cpp" />
     <ClCompile Include="..\src\main.cpp" />
   </ItemGroup>
@@ -37,12 +32,7 @@
     <ClInclude Include="..\src\gameElements\Game.h" />
     <ClInclude Include="..\src\gameElements\Global.h" />
     <ClInclude Include="..\src\gameElements\Menu.h" />
-    <ClInclude Include="..\src\gameObjects\Bullet.h" />
-    <ClInclude Include="..\src\gameObjects\MediumMeteor.h" />
-    <ClInclude Include="..\src\gameObjects\Meteor.h" />
     <ClInclude Include="..\src\gameObjects\Player.h" />
-    <ClInclude Include="..\src\gameObjects\Shoot.h" />
-    <ClInclude Include="..\src\gameObjects\SmallMeteor.h" />
     <ClInclude Include="..\src\game\Asteroids.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

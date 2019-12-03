@@ -5,15 +5,36 @@
 
 #include "gameElements/Global.h"
 #include "gameObjects/Player.h"
-#include "gameObjects/Bullet.h"
-#include "gameObjects/Meteor.h"
-#include "gameObjects/MediumMeteor.h"
-#include "gameObjects/SmallMeteor.h"
+//#include "gameObjects/Bullet.h"
+//#include "gameObjects/Meteor.h"
+//#include "gameObjects/MediumMeteor.h"
+//#include "gameObjects/SmallMeteor.h"
 namespace AsteroidsJ
 {
 	const int MAX_BIG_METEORS = 4;
 	const int MAX_MEDIUM_METEORS = 8;
 	const int MAX_SMALL_METEORS = 16;
+
+
+
+	typedef struct Shoot {
+		Vector2 position;
+		Vector2 speed;
+		float radius;
+		float rotation;
+		int lifeSpawn;
+		bool active;
+		Color color;
+	} Shoot;
+
+	typedef struct Rock {
+		Vector2 position;
+		Vector2 speed;
+		float radius;
+		bool active;
+		Color color;
+	} Rock;
+
 
 	class Game
 	{
@@ -22,25 +43,29 @@ namespace AsteroidsJ
 		~Game();
 		void Init();
 		bool Update();
-		void Draw();
+		void Draw();	
 		Music gameplayMusic;
 		float volume;
 		
 		Player* player;
 		Music gameMusic;
 		Sound resetSong;
-		Meteor* bigMeteor[MAX_BIG_METEORS];
-		MediumMeteor* mediumMeteor[MAX_MEDIUM_METEORS];
-		SmallMeteor* smallMeteor[MAX_SMALL_METEORS];
+		
+		const int MeteorsSpeed = 2;
+		int midMeteorsCount;
+		int smallMeteorsCount;
+		int destroyedMeteorsCount;
+
+		Rock bigMeteor[MAX_BIG_METEORS];
+		Rock mediumMeteor[MAX_MEDIUM_METEORS];
+		Rock smallMeteor[MAX_SMALL_METEORS];
+
+		Shoot shoot[PLAYER_MAX_SHOOTS];
+		
 	private:
 
 	};
 	
-	static int midMeteorsCount;
-	static int smallMeteorsCount;
-	static int destroyedMeteorsCount;
-	static float shipHeight;
-
 
 }
 #endif

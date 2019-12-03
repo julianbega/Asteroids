@@ -30,22 +30,7 @@
     <ClCompile Include="..\src\gameElements\Menu.cpp">
       <Filter>src\Asteroids</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\gameObjects\Bullet.cpp">
-      <Filter>src\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\gameObjects\MediumMeteor.cpp">
-      <Filter>src\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\gameObjects\Meteor.cpp">
-      <Filter>src\Objects</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\gameObjects\Player.cpp">
-      <Filter>src\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\gameObjects\Shoot.cpp">
-      <Filter>src\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\gameObjects\SmallMeteor.cpp">
       <Filter>src\Objects</Filter>
     </ClCompile>
     <ClCompile Include="..\src\main.cpp">
@@ -68,22 +53,7 @@
     <ClInclude Include="..\src\gameElements\Menu.h">
       <Filter>src\Asteroids</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\gameObjects\Bullet.h">
-      <Filter>src\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\gameObjects\MediumMeteor.h">
-      <Filter>src\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\gameObjects\Meteor.h">
-      <Filter>src\Objects</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\gameObjects\Player.h">
-      <Filter>src\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\gameObjects\Shoot.h">
-      <Filter>src\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\gameObjects\SmallMeteor.h">
       <Filter>src\Objects</Filter>
     </ClInclude>
   </ItemGroup>

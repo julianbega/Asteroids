@@ -1,10 +1,8 @@
-#ifndef GLOBAL_H
+	#ifndef GLOBAL_H
 #define GLOBAL_H
 
 #include "raylib.h"
 #include <math.h>
-#include "gameObjects/Bullet.h"
-#include "gameObjects/Meteor.h"
 namespace AsteroidsJ
 {
 	

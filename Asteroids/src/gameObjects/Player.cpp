@@ -3,7 +3,7 @@
 #include "raylib.h"
 #include "game/Asteroids.h"
 #include "gameElements/Global.h"
-#include "Bullet.h"
+//#include "Bullet.h"
 namespace AsteroidsJ
 {
 	Player::Player()
@@ -34,25 +34,7 @@ namespace AsteroidsJ
 			if (acceleration > 0) acceleration -= 0.04f;
 			else if (acceleration < 0) acceleration = 0;
 		}
-		if (IsKeyPressed(KEY_SPACE))
-		{
-			for (int i = 0; i < PLAYER_MAX_SHOOTS; i++)
-			{
-				if (shoot[i] != NULL)
-				{
-					shoot[i]->Init();
-					if (!shoot[i]->active)
-					{
-						shoot[i]->position = { position.x + static_cast<float>(sin(rotation*DEG2RAD))*(shipHeight), position.y - static_cast<float>(cos(rotation*DEG2RAD))*(shipHeight) };
-						shoot[i]->active = true;
-						shoot[i]->speed.x = 1.5*sin(rotation*DEG2RAD)*PlayerSpeed;
-						shoot[i]->speed.y = 1.5*cos(rotation*DEG2RAD)*PlayerSpeed;
-						shoot[i]->rotation = rotation;
-						break;
-					}
-				}
-			}
-		}
+		
 	}
 
 	void Player::Init()
@@ -65,10 +47,7 @@ namespace AsteroidsJ
 		color = LIGHTGRAY;
 		shipHeight = (10.0f) / static_cast<int>(tanf(20 * DEG2RAD));
 		destroyedMeteorsCount = 0;
-		for (int i = 0; i < PLAYER_MAX_SHOOTS; i++)
-		{
-				shoot[i]= NULL;
-		}
+
 	}
 
 	void Player::Update()
@@ -87,18 +66,12 @@ namespace AsteroidsJ
 
 	void Player::Draw()
 	{
-		shipHeight = (PlayerBaseSize / 2) / tanf(20 * DEG2RAD);
+		float shipHeight = (PlayerBaseSize / 2) / tanf(20 * DEG2RAD);
 		Vector2 v1 = { position.x + sinf(rotation*DEG2RAD)*(shipHeight), position.y - cosf(rotation*DEG2RAD)*(shipHeight) };
 		Vector2 v2 = { position.x - cosf(rotation*DEG2RAD)*(PlayerBaseSize / 2), position.y - sinf(rotation*DEG2RAD)*(PlayerBaseSize / 2) };
 		Vector2 v3 = { position.x + cosf(rotation*DEG2RAD)*(PlayerBaseSize / 2), position.y + sinf(rotation*DEG2RAD)*(PlayerBaseSize / 2) };
 		DrawTriangle(v1, v2, v3, MAROON);
-		for (int i = 0; i < PLAYER_MAX_SHOOTS; i++)
-		{
-			if (shoot[i] != NULL)
-			{
-			shoot[i]->Draw();
-			}
-		}
+	
 	}
 
 	

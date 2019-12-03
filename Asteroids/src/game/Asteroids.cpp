@@ -40,7 +40,7 @@ namespace AsteroidsJ
 	void Asteroids::Init()
 	{
 		menu->Init();
-		game->Init();
+		//ººgame->Init();
 		credits->Init();
 		gamestatus = MENU;
 		SetTargetFPS(60);
@@ -67,7 +67,7 @@ namespace AsteroidsJ
 			}
 			break;
 		case CREDITS:
-			credits->Update();
+		//	credits->Update();
 			break;
 		case EXIT:
 			inGame = false;

@@ -196,21 +196,47 @@ namespace AsteroidsJ
 
 			player->collider = { player->position.x + sin(player->rotation*DEG2RAD)*(player->shipHeight / 2.5f), player->position.y - cos(player->rotation*DEG2RAD)*(player->shipHeight / 2.5f), 12 };
 
-			for (int a = 0; a < MAX_BIG_METEORS; a++)
+			for (int j = 0; j < MAX_BIG_METEORS; j++)
 			{
-				if (CheckCollisionCircles({ player->collider.x, player->collider.y }, player->collider.z, bigMeteor[a].position, bigMeteor[a].radius) && bigMeteor[a].active) gameOver = true;
+				if (CheckCollisionCircles({ player->collider.x, player->collider.y }, player->collider.z, bigMeteor[j].position, bigMeteor[j].radius) && bigMeteor[j].active)
+				{
+					//gameOver = true;
+					
+					bigMeteor[j].active = false;
+					destroyedMeteorsCount++;
+
+					for (int j = 0; j < 2; j++)
+					{
+						if (midMeteorsCount % 2 == 0)
+						{
+							mediumMeteor[midMeteorsCount].position = { bigMeteor[j].position.x, bigMeteor[j].position.y };
+							mediumMeteor[midMeteorsCount].speed = { cos(player->rotation*DEG2RAD)*MeteorsSpeed*-1, sin(player->rotation*DEG2RAD)*MeteorsSpeed*-1 };
+						}
+						else
+						{
+							mediumMeteor[midMeteorsCount].position = { bigMeteor[j].position.x, bigMeteor[j].position.y };
+							mediumMeteor[midMeteorsCount].speed = { cos(player->rotation*DEG2RAD)*MeteorsSpeed, sin(player->rotation*DEG2RAD)*MeteorsSpeed };
+						}
+
+						mediumMeteor[midMeteorsCount].active = true;
+						midMeteorsCount++;
+					}
+					bigMeteor[j].color = RED;
+					j = MAX_BIG_METEORS;
+				}
 			}
 
-			for (int a = 0; a < MAX_MEDIUM_METEORS; a++)
+			for (int j = 0; j < MAX_MEDIUM_METEORS; j++)
 			{
-				if (CheckCollisionCircles({ player->collider.x, player->collider.y }, player->collider.z, mediumMeteor[a].position, mediumMeteor[a].radius) && mediumMeteor[a].active) gameOver = true;
+				if (CheckCollisionCircles({ player->collider.x, player->collider.y }, player->collider.z, mediumMeteor[j].position, mediumMeteor[j].radius) && mediumMeteor[j].active) gameOver = true;
 			}
 
-			for (int a = 0; a < MAX_SMALL_METEORS; a++)
+			for (int j = 0; j < MAX_SMALL_METEORS; j++)
 			{
-				if (CheckCollisionCircles({ player->collider.x, player->collider.y }, player->collider.z, smallMeteor[a].position, smallMeteor[a].radius) && smallMeteor[a].active) gameOver = true;
+				if (CheckCollisionCircles({ player->collider.x, player->collider.y }, player->collider.z, smallMeteor[j].position, smallMeteor[j].radius) && smallMeteor[j].active) gameOver = true;
 			}
 
+			// si se salen de la pantalla aparecen del otro lado
 			for (int i = 0; i < MAX_BIG_METEORS; i++)
 			{
 				if (bigMeteor[i].active)
@@ -224,7 +250,7 @@ namespace AsteroidsJ
 					else if (bigMeteor[i].position.y < 0 - bigMeteor[i].radius) bigMeteor[i].position.y = screenHeight + bigMeteor[i].radius;
 				}
 			}
-
+			// si se salen de la pantalla aparecen del otro lado
 			for (int i = 0; i < MAX_MEDIUM_METEORS; i++)
 			{
 				if (mediumMeteor[i].active)
@@ -238,7 +264,7 @@ namespace AsteroidsJ
 					else if (mediumMeteor[i].position.y < 0 - mediumMeteor[i].radius) mediumMeteor[i].position.y = screenHeight + mediumMeteor[i].radius;
 				}
 			}
-
+			// si se salen de la pantalla aparecen del otro lado
 			for (int i = 0; i < MAX_SMALL_METEORS; i++)
 			{
 				if (smallMeteor[i].active)
@@ -259,7 +285,7 @@ namespace AsteroidsJ
 				{
 					for (int a = 0; a < MAX_BIG_METEORS; a++)
 					{
-						if (bigMeteor[a].active && CheckCollisionCircles(shoot[i].position, shoot[i].radius, bigMeteor[a].position, bigMeteor[a].radius))
+						if (bigMeteor[a].active && CheckCollisionCircles(shoot[i].position, shoot[i].radius, bigMeteor[a].position, bigMeteor[a].radius ))
 						{
 							shoot[i].active = false;
 							shoot[i].lifeSpawn = 0;
@@ -341,6 +367,11 @@ namespace AsteroidsJ
 				Init();
 				gameOver = false;
 			}
+			if (gameOver == true)
+			{
+				Init();
+				gameOver = false;
+			}
 
 
 		return false;
@@ -377,7 +408,7 @@ namespace AsteroidsJ
 		}
 
 		if (victory) {
-			DrawText("VICTORY", screenWidth / 2 - MeasureText("VICTORY", 20) / 2, screenHeight / 2, 20, LIGHTGRAY);
+			DrawText("VICTORY", screenWidth / 2 - MeasureText("VICTORY", 20) / 2, screenHeight / 2, 20, YELLOW);
 			DrawText("PRESS [ENTER] TO PLAY AGAIN", GetScreenWidth() / 2 - MeasureText("PRESS [ENTER] TO PLAY AGAIN", 20) / 2, GetScreenHeight() / 2 - 50, 20, GRAY);
 		}
 

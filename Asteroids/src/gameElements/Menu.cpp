@@ -57,6 +57,10 @@ namespace AsteroidsJ
 				actualOption++;
 			}
 		}
+		if (IsKeyDown(KEY_ESCAPE))
+		{
+			gamestatus = END;
+		}
 		if (IsKeyReleased(KEY_ENTER))
 		{
 			

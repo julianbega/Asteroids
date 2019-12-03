@@ -8,7 +8,7 @@ namespace AsteroidsJ
 	
 	enum GameStage
 	{
-		MENU, GAME, CREDITS, EXIT
+		MENU, GAME, CREDITS, EXIT, END
 	};
 	extern GameStage gamestatus;
 

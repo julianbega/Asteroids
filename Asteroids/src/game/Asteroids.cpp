@@ -72,6 +72,9 @@ namespace AsteroidsJ
 		case EXIT:
 			inGame = false;
 			break;
+		case END:
+			inGame = false;
+			break;
 		}
 	}
 	void Asteroids::Draw()

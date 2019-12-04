@@ -1,6 +1,8 @@
 #include "Menu.h"
+#include <math.h>
 #include "raylib.h"
 #include "Global.h"
+#include "gameObjects/Player.h"
 namespace AsteroidsJ
 {
 	Menu::Menu()

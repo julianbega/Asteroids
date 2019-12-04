@@ -1,7 +1,6 @@
 #ifndef ASTEROIDS_H
 #define ASTEROIDS_H
 #include "raylib.h"
-
 #include "gameElements/Game.h"
 #include "gameElements/Menu.h"
 #include "gameElements/Credits.h"

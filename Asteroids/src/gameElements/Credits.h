@@ -1,6 +1,5 @@
 #ifndef CREDITS_H
 #define CREDITS_H
-#include "raylib.h"
 namespace AsteroidsJ
 {
 	class Credits
@@ -13,7 +12,6 @@ namespace AsteroidsJ
 		void Update();
 		void Draw();
 	private:
-		Texture2D creditsTexture;
 	};
 }
 #endif

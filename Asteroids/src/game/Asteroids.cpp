@@ -61,10 +61,6 @@ namespace AsteroidsJ
 			}
 			if (game->Update())
 			{
-				/*gamestatus = CREDITS;
-				firstTime = false;
-				PlaySound(winSong);
-				*/
 			}
 			break;
 		case CREDITS:

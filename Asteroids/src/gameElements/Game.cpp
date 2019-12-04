@@ -1,13 +1,9 @@
 #include "Game.h"
 #include <iostream>
+#include <math.h>
 #include "raylib.h"
 #include "gameElements/Global.h"
 #include "gameObjects/Player.h"
-//#include "gameObjects/Bullet.h"
-//#include "gameObjects/Meteor.h"
-//#include "gameObjects/MediumMeteor.h"
-//#include "gameObjects/SmallMeteor.h"
-
 namespace AsteroidsJ
 {
 	Game::Game()
@@ -489,5 +485,6 @@ namespace AsteroidsJ
 		
 
 	}
+
 
 }

@@ -1,14 +1,8 @@
 #ifndef GAME_H
 #define GAME_H
 #include "raylib.h"
-#include <math.h>
-
 #include "gameElements/Global.h"
 #include "gameObjects/Player.h"
-//#include "gameObjects/Bullet.h"
-//#include "gameObjects/Meteor.h"
-//#include "gameObjects/MediumMeteor.h"
-//#include "gameObjects/SmallMeteor.h"
 namespace AsteroidsJ
 {
 	const int MAX_BIG_METEORS = 4;
@@ -45,21 +39,16 @@ namespace AsteroidsJ
 		bool Update();
 		void Draw();	
 		Music gameplayMusic;
-		float volume;
-		
-		Player* player;
-		
+		float volume;		
+		Player* player;		
 		const int MeteorsSpeed = 2;
 		int midMeteorsCount;
 		int smallMeteorsCount;
 		int destroyedMeteorsCount;
-
 		Rock bigMeteor[MAX_BIG_METEORS];
 		Rock mediumMeteor[MAX_MEDIUM_METEORS];
 		Rock smallMeteor[MAX_SMALL_METEORS];
-
-		Shoot shoot[PLAYER_MAX_SHOOTS];
-		
+		Shoot shoot[PLAYER_MAX_SHOOTS];		
 	private:
 
 		Sound AsteroidsBreack;

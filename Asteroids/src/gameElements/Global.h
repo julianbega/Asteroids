@@ -1,8 +1,6 @@
-	#ifndef GLOBAL_H
+#ifndef GLOBAL_H
 #define GLOBAL_H
 
-#include "raylib.h"
-#include <math.h>
 namespace AsteroidsJ
 {
 	

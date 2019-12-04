@@ -3,7 +3,6 @@
 #include "raylib.h"
 #include "game/Asteroids.h"
 #include "gameElements/Global.h"
-//#include "Bullet.h"
 namespace AsteroidsJ
 {
 	Player::Player()

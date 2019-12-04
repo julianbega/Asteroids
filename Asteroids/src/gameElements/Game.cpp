@@ -143,8 +143,8 @@ namespace AsteroidsJ
 					{
 						shoot[i].position = { player->position.x + sin(player->rotation*DEG2RAD)*(player->shipHeight), player->position.y - cos(player->rotation*DEG2RAD)*(player->shipHeight) };
 						shoot[i].active = true;
-						shoot[i].speed.x = static_cast<float>(1.5*sin(player->rotation*DEG2RAD)*player->PlayerSpeed);
-						shoot[i].speed.y = static_cast<float>(1.5*cos(player->rotation*DEG2RAD)*player->PlayerSpeed);
+						shoot[i].speed.x = static_cast<float>(1.5*sin(player->rotation*DEG2RAD)*player->playerSpeed);
+						shoot[i].speed.y = static_cast<float>(1.5*cos(player->rotation*DEG2RAD)*player->playerSpeed);
 						shoot[i].rotation = player->rotation;
 						break;
 					}
@@ -200,7 +200,14 @@ namespace AsteroidsJ
 			{
 				if (CheckCollisionCircles({ player->collider.x, player->collider.y }, player->collider.z, bigMeteor[j].position, bigMeteor[j].radius) && bigMeteor[j].active)
 				{
-					//gameOver = true;
+					if (player->lives == 1)
+					{
+						gameOver = true;
+					}
+					else
+					{
+						player->lives = player->lives - 1;
+					}
 					
 					bigMeteor[j].active = false;
 					destroyedMeteorsCount++;
@@ -228,12 +235,57 @@ namespace AsteroidsJ
 
 			for (int j = 0; j < MAX_MEDIUM_METEORS; j++)
 			{
-				if (CheckCollisionCircles({ player->collider.x, player->collider.y }, player->collider.z, mediumMeteor[j].position, mediumMeteor[j].radius) && mediumMeteor[j].active) gameOver = true;
+				if (CheckCollisionCircles({ player->collider.x, player->collider.y }, player->collider.z, mediumMeteor[j].position, mediumMeteor[j].radius) && mediumMeteor[j].active)
+				{
+					if (player->lives == 1)
+					{
+						gameOver = true;
+					}
+					else
+					{
+						player->lives = player->lives - 1;
+					}
+					mediumMeteor[j].active = false;
+					destroyedMeteorsCount++;
+
+					for (int k = 0; k < 2; k++)
+					{
+						if (smallMeteorsCount % 2 == 0)
+						{
+							smallMeteor[smallMeteorsCount].position = { mediumMeteor[j].position.x, mediumMeteor[j].position.y };
+							smallMeteor[smallMeteorsCount].speed = { cos(player->rotation*DEG2RAD)*MeteorsSpeed*-1, sin(player->rotation*DEG2RAD)*MeteorsSpeed*-1 };
+						}
+						else
+						{
+							smallMeteor[smallMeteorsCount].position = { mediumMeteor[j].position.x, mediumMeteor[j].position.y };
+							smallMeteor[smallMeteorsCount].speed = { cos(player->rotation*DEG2RAD)*MeteorsSpeed, sin(player->rotation*DEG2RAD)*MeteorsSpeed };
+						}
+
+						smallMeteor[smallMeteorsCount].active = true;
+						smallMeteorsCount++;
+					}
+					mediumMeteor[j].color = GREEN;
+					j = MAX_MEDIUM_METEORS;
+				}
 			}
 
 			for (int j = 0; j < MAX_SMALL_METEORS; j++)
 			{
-				if (CheckCollisionCircles({ player->collider.x, player->collider.y }, player->collider.z, smallMeteor[j].position, smallMeteor[j].radius) && smallMeteor[j].active) gameOver = true;
+				if (CheckCollisionCircles({ player->collider.x, player->collider.y }, player->collider.z, smallMeteor[j].position, smallMeteor[j].radius) && smallMeteor[j].active)
+				{					
+					if (player->lives == 1)
+					{
+						gameOver = true;
+					}
+					else
+					{
+						player->lives = player->lives - 1;
+					}
+					smallMeteor[j].active = false;
+					destroyedMeteorsCount++;
+					smallMeteor[j].color = YELLOW;
+					j = MAX_SMALL_METEORS;
+				}
 			}
 
 			// si se salen de la pantalla aparecen del otro lado
@@ -279,6 +331,8 @@ namespace AsteroidsJ
 				}
 			}
 
+
+			// colision balas y asteroides
 			for (int i = 0; i < PLAYER_MAX_SHOOTS; i++)
 			{
 				if ((shoot[i].active))
@@ -369,8 +423,7 @@ namespace AsteroidsJ
 			}
 			if (gameOver == true)
 			{
-				Init();
-				gameOver = false;
+				victory = true;
 			}
 
 
@@ -379,10 +432,7 @@ namespace AsteroidsJ
 	void Game::Draw()
 	{
 		ClearBackground(RAYWHITE);
-		if (player != NULL)
-		{ 
-		player->Draw();
-		}
+		
 		for (int i = 0; i < MAX_BIG_METEORS; i++)
 		{
 			if (bigMeteor[i].active) DrawCircleV(bigMeteor[i].position, bigMeteor[i].radius, DARKBLUE);
@@ -407,15 +457,20 @@ namespace AsteroidsJ
 			if (shoot[i].active) DrawCircleV(shoot[i].position, shoot[i].radius, BLACK);
 		}
 
-		if (victory) {
+		if (victory) 
+		{
 			DrawText("VICTORY", screenWidth / 2 - MeasureText("VICTORY", 20) / 2, screenHeight / 2, 20, YELLOW);
 			DrawText("PRESS [ENTER] TO PLAY AGAIN", GetScreenWidth() / 2 - MeasureText("PRESS [ENTER] TO PLAY AGAIN", 20) / 2, GetScreenHeight() / 2 - 50, 20, GRAY);
 		}
 
 		if (pause) DrawText("PAUSED", screenWidth / 2 - MeasureText("PAUSED", 40) / 2, screenHeight / 2 - 40, 40, BLACK);
-	
-		//else DrawText("PRESS [ENTER] TO PLAY AGAIN", GetScreenWidth() / 2 - MeasureText("PRESS [ENTER] TO PLAY AGAIN", 20) / 2, GetScreenHeight() / 2 - 50, 20, GRAY);
-
+		
+		if (player != NULL)
+		{
+			player->Draw();
+		}
+		
+		
 
 	}
 

@@ -104,8 +104,8 @@ namespace AsteroidsJ
 		player->Update();
 		PlayerRec.x = player->position.x;
 		PlayerRec.y = player->position.y;
-		PlayerRec.width = player->PlayerBaseSize;
-		PlayerRec.height = player->PlayerBaseSize;
+		PlayerRec.width = player->playerBaseSize;
+		PlayerRec.height = player->playerBaseSize;
 		if (CheckCollisionRecs(PlayRec, PlayerRec))
 		{
 			actualOption = Play;

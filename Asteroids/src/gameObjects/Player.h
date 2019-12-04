@@ -17,9 +17,10 @@ namespace AsteroidsJ
 		void Init();
 		void Update();
 		void Draw();
-		const float PlayerBaseSize = 20.0f;
-		const float PlayerSpeed = 6.0f;
-		const int PlayerMaxShoots = 10;
+		const float playerBaseSize = 20.0f;
+		const float playerSpeed = 6.0f;
+		const int playerMaxShoots = 10;
+		int lives;
 		Vector2 position;
 		Vector2 speed;
 		float acceleration;

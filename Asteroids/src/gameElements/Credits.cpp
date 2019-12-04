@@ -33,7 +33,10 @@ namespace AsteroidsJ
 	}
 	void Credits::Draw()
 	{
-		ClearBackground(BLACK);
-		DrawTexture(creditsTexture, 0, 0, WHITE);
+		DrawText("Asteroids", GetScreenWidth()/4 , GetScreenHeight()/5, tilescale*2, WHITE);
+		DrawText("Enter: Menu", GetScreenWidth() - (tilescale * CONTROLESTEXTDISTANCEINY), (tilescale * EXITTEXTDISTANCEINY), tilescale, WHITE);
+		DrawText("ESC: Back", GetScreenWidth() - (tilescale * CONTROLESTEXTDISTANCEINY), (tilescale * EXITTEXTDISTANCEINY) - tilescale, tilescale, WHITE);
+		DrawText("https: //patrickdearteaga.com ", + (tilescale), (tilescale * EXITTEXTDISTANCEINY), tilescale/2, WHITE);
+		DrawText("Julián Bega", + (tilescale ), (tilescale * EXITTEXTDISTANCEINY) - tilescale, tilescale/2, WHITE);
 	}
 }

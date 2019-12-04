@@ -19,7 +19,12 @@ namespace AsteroidsJ
 
 	const int screenWidth = 800;
 	const int screenHeight = 450;
-
+	const int tilescale = 30;
+	const int TEXTDISTANCEINX = 2;
+	const int PLAYTEXTDISTANCEINY = 6;
+	const int CONTROLESTEXTDISTANCEINY = 8;
+	const int CREDITSTEXTDISTANCEINY = 10;
+	const int EXITTEXTDISTANCEINY = 12;
 }
 #endif
 

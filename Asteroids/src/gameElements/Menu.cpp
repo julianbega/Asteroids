@@ -119,7 +119,7 @@ namespace AsteroidsJ
 		{
 			player->Draw();
 		}
-			int tilescale = 30;
+			
 			DrawTexture(titleTexture, GetScreenWidth() / 2 - titleTexture.width / 2,
 				GetScreenHeight() / 5 - titleTexture.height / 2, WHITE);
 			switch (actualOption)
@@ -144,8 +144,14 @@ namespace AsteroidsJ
 			default:
 				break;
 			}
+			DrawText("Asteroids", GetScreenWidth() / 4, GetScreenHeight() / 5, tilescale * 2, WHITE);
 			DrawText("F2 - volume", GetScreenWidth() - (tilescale * CONTROLESTEXTDISTANCEINY), tilescale * EXITTEXTDISTANCEINY, tilescale, WHITE);
 			DrawText("F3 + volume", GetScreenWidth() - (tilescale * CONTROLESTEXTDISTANCEINY), (tilescale * EXITTEXTDISTANCEINY) + tilescale, tilescale, WHITE);
+			DrawText("Move: Arrows", GetScreenWidth() - (tilescale * CONTROLESTEXTDISTANCEINY), (tilescale * EXITTEXTDISTANCEINY) - tilescale, tilescale, WHITE);
+			DrawText("Space: Shoot", GetScreenWidth() - (tilescale * CONTROLESTEXTDISTANCEINY), (tilescale * EXITTEXTDISTANCEINY) - 2 * tilescale, tilescale, WHITE);
+			DrawText("Enter: Reset", GetScreenWidth() - (tilescale * CONTROLESTEXTDISTANCEINY), (tilescale * EXITTEXTDISTANCEINY) - 3*tilescale, tilescale, WHITE);
+			DrawText("P: Pause", GetScreenWidth() - (tilescale * CONTROLESTEXTDISTANCEINY), (tilescale * EXITTEXTDISTANCEINY) - 4 * tilescale, tilescale, WHITE);
+			DrawText("ESC: Back", GetScreenWidth() - (tilescale * CONTROLESTEXTDISTANCEINY), (tilescale * EXITTEXTDISTANCEINY) - 5 * tilescale, tilescale, WHITE);
 		
 	}
 

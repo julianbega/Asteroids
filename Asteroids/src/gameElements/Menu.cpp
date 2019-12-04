@@ -108,14 +108,18 @@ namespace AsteroidsJ
 		PlayerRec.height = player->playerBaseSize;
 		if (CheckCollisionRecs(PlayRec, PlayerRec))
 		{
+			PlaySound(menuSelectorSound);
 			actualOption = Play;
+			
 		}
 		else if (CheckCollisionRecs(CreditsRec, PlayerRec))
 		{
+			PlaySound(menuSelectorSound);
 			actualOption = Credits;
 		}
 		else if (CheckCollisionRecs(ExitRec, PlayerRec))
 		{
+			PlaySound(menuSelectorSound);
 			actualOption = Exit;
 		}
 		else

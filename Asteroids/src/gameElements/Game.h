@@ -48,8 +48,6 @@ namespace AsteroidsJ
 		float volume;
 		
 		Player* player;
-		Music gameMusic;
-		Sound resetSong;
 		
 		const int MeteorsSpeed = 2;
 		int midMeteorsCount;
@@ -64,6 +62,7 @@ namespace AsteroidsJ
 		
 	private:
 
+		Sound AsteroidsBreack;
 	};
 	
 

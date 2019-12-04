@@ -52,8 +52,8 @@ namespace AsteroidsJ
 
 	void Player::Update()
 	{
-		speed.x = sin(rotation*DEG2RAD)*PlayerSpeed;
-		speed.y = cos(rotation*DEG2RAD)*PlayerSpeed;
+		speed.x = static_cast<float>(sin(rotation*DEG2RAD)*PlayerSpeed);
+		speed.y = static_cast<float>(cos(rotation*DEG2RAD)*PlayerSpeed);
 
 		position.x += (speed.x*acceleration);
 		position.y -= (speed.y*acceleration);	
@@ -66,8 +66,8 @@ namespace AsteroidsJ
 
 	void Player::Draw()
 	{
-		float shipHeight = (PlayerBaseSize / 2) / tanf(20 * DEG2RAD);
-		Vector2 v1 = { position.x + sinf(rotation*DEG2RAD)*(shipHeight), position.y - cosf(rotation*DEG2RAD)*(shipHeight) };
+		float shipHeights = (PlayerBaseSize / 2) / tanf(20 * DEG2RAD);
+		Vector2 v1 = { position.x + sinf(rotation*DEG2RAD)*(shipHeights), position.y - cosf(rotation*DEG2RAD)*(shipHeights) };
 		Vector2 v2 = { position.x - cosf(rotation*DEG2RAD)*(PlayerBaseSize / 2), position.y - sinf(rotation*DEG2RAD)*(PlayerBaseSize / 2) };
 		Vector2 v3 = { position.x + cosf(rotation*DEG2RAD)*(PlayerBaseSize / 2), position.y + sinf(rotation*DEG2RAD)*(PlayerBaseSize / 2) };
 		DrawTriangle(v1, v2, v3, MAROON);

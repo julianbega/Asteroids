@@ -143,8 +143,8 @@ namespace AsteroidsJ
 					{
 						shoot[i].position = { player->position.x + sin(player->rotation*DEG2RAD)*(player->shipHeight), player->position.y - cos(player->rotation*DEG2RAD)*(player->shipHeight) };
 						shoot[i].active = true;
-						shoot[i].speed.x = 1.5*sin(player->rotation*DEG2RAD)*player->PlayerSpeed;
-						shoot[i].speed.y = 1.5*cos(player->rotation*DEG2RAD)*player->PlayerSpeed;
+						shoot[i].speed.x = static_cast<float>(1.5*sin(player->rotation*DEG2RAD)*player->PlayerSpeed);
+						shoot[i].speed.y = static_cast<float>(1.5*cos(player->rotation*DEG2RAD)*player->PlayerSpeed);
 						shoot[i].rotation = player->rotation;
 						break;
 					}
@@ -205,7 +205,7 @@ namespace AsteroidsJ
 					bigMeteor[j].active = false;
 					destroyedMeteorsCount++;
 
-					for (int j = 0; j < 2; j++)
+					for (int k = 0; k < 2; k++)
 					{
 						if (midMeteorsCount % 2 == 0)
 						{

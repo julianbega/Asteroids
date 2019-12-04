@@ -26,39 +26,30 @@ namespace AsteroidsJ
 	void Menu::Init()
 	{
 		player = new Player();
-		actualOption = Play;
+		actualOption = None;
 		PlayMusicStream(menuMusic);
 		player->shipHeight = (10.0f) / tanf(20 * DEG2RAD);
+		PlayRec.x = tilescale * TEXTDISTANCEINX;
+		PlayRec.y = tilescale * PLAYTEXTDISTANCEINY;
+		PlayRec.width = tilescale*2.3;
+		PlayRec.height = tilescale;
+
+		CreditsRec.x = tilescale * TEXTDISTANCEINX;
+		CreditsRec.y = tilescale * CREDITSTEXTDISTANCEINY;
+		CreditsRec.width = tilescale * 3.7;
+		CreditsRec.height = tilescale;
+
+		ExitRec.x = tilescale * TEXTDISTANCEINX;
+		ExitRec.y = tilescale * EXITTEXTDISTANCEINY;
+		ExitRec.width = tilescale * 2;
+		ExitRec.height = tilescale;
+
+
 	}
 
 	void Menu::Input()
 	{
-		if (IsKeyReleased(KEY_W))
-		{
-			PlaySound(menuSelectorSound);
-
-			if (actualOption == Play)
-			{
-				actualOption = Exit;
-			}
-			else
-			{
-				actualOption--;
-			}
-		}
-		if (IsKeyReleased(KEY_S))
-		{
-			PlaySound(menuSelectorSound);
-
-			if (actualOption == Exit)
-			{
-				actualOption = Play;
-			}
-			else
-			{
-				actualOption++;
-			}
-		}
+		
 		if (IsKeyReleased(KEY_ESCAPE))
 		{
 			gamestatus = END;
@@ -111,6 +102,26 @@ namespace AsteroidsJ
 		Input();
 		player->Input();
 		player->Update();
+		PlayerRec.x = player->position.x;
+		PlayerRec.y = player->position.y;
+		PlayerRec.width = player->PlayerBaseSize;
+		PlayerRec.height = player->PlayerBaseSize;
+		if (CheckCollisionRecs(PlayRec, PlayerRec))
+		{
+			actualOption = Play;
+		}
+		else if (CheckCollisionRecs(CreditsRec, PlayerRec))
+		{
+			actualOption = Credits;
+		}
+		else if (CheckCollisionRecs(ExitRec, PlayerRec))
+		{
+			actualOption = Exit;
+		}
+		else
+		{
+			actualOption = None;
+		}
 	}
 
 	void Menu::Draw()
@@ -122,6 +133,7 @@ namespace AsteroidsJ
 			
 			DrawTexture(titleTexture, GetScreenWidth() / 2 - titleTexture.width / 2,
 				GetScreenHeight() / 5 - titleTexture.height / 2, WHITE);
+		
 			switch (actualOption)
 			{
 			case Play:
@@ -142,8 +154,12 @@ namespace AsteroidsJ
 				DrawText("Exit", tilescale * TEXTDISTANCEINX, tilescale * EXITTEXTDISTANCEINY, tilescale, YELLOW);
 				break;
 			default:
+				DrawText("Play", tilescale * TEXTDISTANCEINX, tilescale * PLAYTEXTDISTANCEINY, tilescale, WHITE);
+				DrawText("Credits", tilescale * TEXTDISTANCEINX, tilescale * CREDITSTEXTDISTANCEINY, tilescale, WHITE);
+				DrawText("Exit", tilescale * TEXTDISTANCEINX, tilescale * EXITTEXTDISTANCEINY, tilescale, WHITE);
 				break;
 			}
+			
 			DrawText("Asteroids", GetScreenWidth() / 4, GetScreenHeight() / 5, tilescale * 2, WHITE);
 			DrawText("F2 - volume", GetScreenWidth() - (tilescale * CONTROLESTEXTDISTANCEINY), tilescale * EXITTEXTDISTANCEINY, tilescale, WHITE);
 			DrawText("F3 + volume", GetScreenWidth() - (tilescale * CONTROLESTEXTDISTANCEINY), (tilescale * EXITTEXTDISTANCEINY) + tilescale, tilescale, WHITE);

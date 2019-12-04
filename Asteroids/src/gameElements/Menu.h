@@ -9,7 +9,7 @@ namespace AsteroidsJ
 	{
 		enum MenuOptions
 		{
-			Play, Credits, Exit
+			Play, Credits, Exit, None
 		};
 	public:
 		Menu();
@@ -21,6 +21,11 @@ namespace AsteroidsJ
 		int actualOption;
 		float volume;
 		Player* player;
+
+		Rectangle PlayerRec;
+		Rectangle PlayRec;
+		Rectangle CreditsRec;
+		Rectangle ExitRec;
 	private:
 		Sound menuSelectorSound;
 		Music menuMusic;
@@ -29,5 +34,8 @@ namespace AsteroidsJ
 
 
 	};
+	
+
+	//
 }
 #endif

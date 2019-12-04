@@ -37,6 +37,6 @@ namespace AsteroidsJ
 		DrawText("Enter: Menu", GetScreenWidth() - (tilescale * CONTROLESTEXTDISTANCEINY), (tilescale * EXITTEXTDISTANCEINY), tilescale, WHITE);
 		DrawText("ESC: Back", GetScreenWidth() - (tilescale * CONTROLESTEXTDISTANCEINY), (tilescale * EXITTEXTDISTANCEINY) - tilescale, tilescale, WHITE);
 		DrawText("https: //patrickdearteaga.com ", + (tilescale), (tilescale * EXITTEXTDISTANCEINY), tilescale/2, WHITE);
-		DrawText("Julián Bega", + (tilescale ), (tilescale * EXITTEXTDISTANCEINY) - tilescale, tilescale/2, WHITE);
+		DrawText("Julian Bega", + (tilescale ), (tilescale * EXITTEXTDISTANCEINY) - tilescale, tilescale/2, WHITE);
 	}
 }
